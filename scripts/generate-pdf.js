@@ -56,17 +56,7 @@ async function generatePDF(url = 'http://localhost:3000', outputFile = 'CV_Elias
             main.style.border = 'none';
         }
 
-        // Ajouter plus de padding au header bleu
-        const header = document.querySelector('.bg-gradient-to-r');
-        if (header) {
-            header.style.padding = '80px 100px';
-        }
-
-        // Réduire le padding de la grille
-        const grid = document.querySelector('.p-10');
-        if (grid) {
-            grid.style.padding = '20px';
-        }
+        // Les styles de padding sont gérés par les composants React
 
         // Injecter du CSS pour éviter les coupures de contenu
         const style = document.createElement('style');
