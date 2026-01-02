@@ -55,6 +55,7 @@
       "scripts": {
             "dev": "vite",
             "build": "vite build",
-            "pdf": "node scripts/generate-pdf.js"
+            "pdf": "node scripts/generate-pdf.js",
+            "pdf-server": "node scripts/pdf-server.js"
       }
 }
