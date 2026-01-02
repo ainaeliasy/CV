@@ -56,11 +56,57 @@ async function generatePDF(url = 'http://localhost:3000', outputFile = 'CV_Elias
             main.style.border = 'none';
         }
 
+        // Ajouter plus de padding au header bleu
+        const header = document.querySelector('.bg-gradient-to-r');
+        if (header) {
+            header.style.padding = '80px 100px';
+        }
+
         // Réduire le padding de la grille
         const grid = document.querySelector('.p-10');
         if (grid) {
             grid.style.padding = '20px';
         }
+
+        // Injecter du CSS pour éviter les coupures de contenu
+        const style = document.createElement('style');
+        style.textContent = `
+            /* Éviter les coupures dans les cartes d'expérience et formation */
+            .rounded-xl, .rounded-lg, .bg-slate-50, .border-l-4 {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+            
+            /* Les sections avec border-l (timeline) */
+            .border-l-4 > div, .space-y-8 > div, .space-y-6 > div {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+            
+            /* Titres restent avec leur contenu */
+            h2, h3, h4 {
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+            }
+            
+            /* Éviter orphelines/veuves */
+            p, li {
+                orphans: 3;
+                widows: 3;
+            }
+            
+            /* Première page sans marge en haut */
+            @page :first {
+                margin-top: 0 !important;
+            }
+            
+            /* Pages suivantes avec marge en haut */
+            @page {
+                margin-top: 10mm;
+                margin-bottom: 10mm;
+            }
+        `;
+        document.head.appendChild(style);
     });
 
     await new Promise(resolve => setTimeout(resolve, 300));
@@ -76,11 +122,11 @@ async function generatePDF(url = 'http://localhost:3000', outputFile = 'CV_Elias
         margin: {
             top: '0',
             right: '0',
-            bottom: '0',
+            bottom: '10mm',
             left: '0'
         },
-        preferCSSPageSize: true, // Utiliser les dimensions CSS
-        scale: 0.48
+        preferCSSPageSize: true,
+        scale: 0.55
     });
 
     console.log(`✅ PDF généré avec succès: ${outputPath}`);
