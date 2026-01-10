@@ -10,8 +10,14 @@ export function DownloadPDFButton() {
     setIsSuccess(false);
 
     try {
+      // Déterminer l'URL de base (dev ou prod)
+      const isLocalDev = window.location.hostname === 'localhost' && window.location.port === '5173';
+      const apiBase = isLocalDev ? 'http://localhost:3001' : '';
+      const generateUrl = isLocalDev ? `${apiBase}/generate-pdf` : '/api/generate-pdf';
+      const downloadUrl = isLocalDev ? `${apiBase}/download-pdf` : '/api/download-pdf';
+
       // Générer le PDF via le serveur
-      const response = await fetch('http://localhost:3001/generate-pdf', {
+      const response = await fetch(generateUrl, {
         method: 'POST',
       });
 
@@ -20,7 +26,7 @@ export function DownloadPDFButton() {
       }
 
       // Télécharger le PDF généré
-      const downloadResponse = await fetch('http://localhost:3001/download-pdf');
+      const downloadResponse = await fetch(downloadUrl);
       const blob = await downloadResponse.blob();
       
       // Créer un lien de téléchargement
