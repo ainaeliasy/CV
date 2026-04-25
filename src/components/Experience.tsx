@@ -12,6 +12,19 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
+    id: '0',
+    title: 'Machine Learning Engineer & Spécialiste Web Scraping',
+    company: 'New Energy',
+    period: 'Jan 2024 - Présent',
+    location: 'Remote',
+    description: [
+      'Conception et entraînement de modèles de Machine Learning pour le traitement et l\'analyse automatisée de données',
+      'Développement de pipelines complexes d\'extraction de données à grande échelle (Web Scraping)',
+      'Implémentation d\'architectures backend distribuées orientées messages et création d\'API résilientes',
+      'Stack technique: Python, Scikit-Learn, RabbitMQ, API REST, Playwright, PostgreSQL',
+    ],
+  },
+  {
     id: '1',
     title: 'Développeur Laravel Freelance',
     company: 'Geekworkers Mada',
@@ -30,7 +43,7 @@ const experiences: ExperienceItem[] = [
     id: '2',
     title: 'Consultant Laravel TALL à temps partiel (Consultant CTO)',
     company: 'Happy Technologies - Mindstream',
-    period: 'Oct 2022 - Présent',
+    period: 'Oct 2022 - Jan 2024',
     location: 'Paris, France',
     description: [
       'Direction du redéveloppement d\'Urbidesk – marketplace d\'espaces de travail collaboratifs',
