@@ -11,7 +11,7 @@ const skillCategories: SkillCategory[] = [
   {
     id: '1',
     category: 'Backend & Frameworks',
-    skills: ['Laravel', 'Symfony', 'PHP', 'Node.js', 'CodeIgniter'],
+    skills: ['Laravel', 'Symfony', 'PHP', 'Node.js', 'CodeIgniter', 'Python', 'RabbitMQ'],
   },
   {
     id: '2',
@@ -35,8 +35,8 @@ const skillCategories: SkillCategory[] = [
   },
   {
     id: '6',
-    category: 'IA & Outils Modernes',
-    skills: ['Claude AI', 'GitHub Copilot', 'Cursor IDE', 'Antigravity', 'Intégration IA', 'Python (ML)'],
+    category: 'IA & Machine Learning',
+    skills: ['Claude AI', 'GitHub Copilot', 'Cursor IDE', 'Antigravity', 'Scikit-Learn', 'Intégration IA'],
   },
   {
     id: '7',
@@ -45,8 +45,8 @@ const skillCategories: SkillCategory[] = [
   },
   {
     id: '8',
-    category: 'Autres',
-    skills: ['API REST', 'Stripe API', 'Linux'],
+    category: 'Automatisation & Divers',
+    skills: ['API REST', 'Stripe API', 'Playwright', 'Linux'],
   },
 ];
 
