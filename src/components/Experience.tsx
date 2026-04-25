@@ -21,7 +21,6 @@ const experiences: ExperienceItem[] = [
       'Conception et entraînement de modèles de Machine Learning pour le traitement et l\'analyse automatisée de données',
       'Développement de pipelines complexes d\'extraction de données à grande échelle (Web Scraping)',
       'Implémentation d\'architectures backend distribuées orientées messages et création d\'API résilientes',
-      'Stack technique: Python, Scikit-Learn, RabbitMQ, API REST, Playwright, PostgreSQL',
     ],
   },
   {
