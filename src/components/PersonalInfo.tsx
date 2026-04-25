@@ -19,7 +19,7 @@ export function PersonalInfo() {
         
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-4xl md:text-5xl mb-3 tracking-tight">Emmanuëlson Eliasy Rakotomalalaniaina</h1>
-          <p className="text-xl text-blue-200 mb-6">Développeur Full-Stack | Laravel/Vue.js • Symfony/Vue.js • Front-End Vue.js</p>
+          <p className="text-xl text-blue-200 mb-6">Ingénieur Logiciel Full-Stack & Data | Laravel • Vue.js • Python (ML & Web Scraping)</p>
           
           <div className="flex flex-wrap gap-5 justify-center md:justify-start text-sm">
             <a href="mailto:ainaeliasy1227@gmail.com" className="flex items-center gap-2 hover:text-blue-200 transition-colors bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
@@ -50,11 +50,11 @@ export function PersonalInfo() {
       <div className="relative mt-8 pt-8 border-t border-white/20">
         <h3 className="text-lg mb-3 text-blue-200">À Propos</h3>
         <p className="text-slate-100 leading-relaxed">
-          Développeur Full-Stack passionné et consultant freelance avec une vaste expérience en Laravel, Symfony, Vue.js 
-          et TALL stack. J'ai mené avec succès des projets SaaS, e-commerce et applications web, en intégrant des 
-          services d'IA, systèmes de paiement Stripe et pipelines CI/CD pour garantir des solutions de haute qualité, 
-          évolutives et maintenables. Je m'épanouis dans les environnements collaboratifs et autonomes, ayant travaillé 
-          avec des équipes et clients internationaux.
+          Ingénieur Logiciel passionné avec une double expertise : le développement Web Full-Stack (Laravel, Vue.js, écosystème TALL) 
+          et la Data/Intelligence Artificielle (Python, Web Scraping à grande échelle, Machine Learning). J'ai conçu et mené à 
+          bien des projets allant d'applications SaaS et e-commerce jusqu'à des infrastructures d'extraction de données complexes 
+          et résilientes. Autonome et rigoureux, je m'épanouis dans la conception d'architectures robustes (RabbitMQ, Cloud) 
+          pour des clients internationaux.
         </p>
       </div>
     </div>
