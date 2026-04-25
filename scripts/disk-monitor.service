@@ -1,0 +1,7 @@
+[Unit]
+Description=Disk space monitor and auto-cleanup
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/disk-monitor.sh
+User=root

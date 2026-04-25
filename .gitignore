@@ -28,3 +28,6 @@ Thumbs.db
 # Generated PDFs
 *.pdf
 .github/deploy_key
+.vite/
+1634309260398.jpg
+test.json
