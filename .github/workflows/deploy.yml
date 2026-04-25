@@ -1,0 +1,61 @@
+name: Deploy CV to GCP
+
+on:
+  push:
+    branches: [develop]
+
+jobs:
+  deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build production
+        run: npm run build
+
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.GCP_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.GCP_VM_IP }} >> ~/.ssh/known_hosts
+
+      - name: Deploy build to VM
+        run: |
+          # Upload new build files
+          scp -r build/* ${{ secrets.GCP_VM_USER }}@${{ secrets.GCP_VM_IP }}:/var/www/cv/build/
+
+      - name: Upload source files
+        run: |
+          # Upload source + config files needed for server-side PDF generation
+          scp src/components/*.tsx ${{ secrets.GCP_VM_USER }}@${{ secrets.GCP_VM_IP }}:/var/www/cv/src/components/
+          scp src/index.css ${{ secrets.GCP_VM_USER }}@${{ secrets.GCP_VM_IP }}:/var/www/cv/src/index.css
+          scp index.html ${{ secrets.GCP_VM_USER }}@${{ secrets.GCP_VM_IP }}:/var/www/cv/index.html
+          scp package.json ${{ secrets.GCP_VM_USER }}@${{ secrets.GCP_VM_IP }}:/var/www/cv/package.json
+
+      - name: Restart server & regenerate PDF
+        run: |
+          ssh ${{ secrets.GCP_VM_USER }}@${{ secrets.GCP_VM_IP }} << 'EOF'
+            cd /var/www/cv
+            # Rebuild on server (to get correct paths)
+            npm run build
+            # Restart the Node.js server
+            pm2 restart cv-server
+            # Regenerate the PDF with latest content
+            PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser node scripts/generate-pdf.js || echo "PDF generation skipped"
+            # Show status
+            pm2 list
+            echo "✅ Deployment successful!"
+          EOF
