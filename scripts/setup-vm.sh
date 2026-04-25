@@ -12,7 +12,7 @@ echo "=========================================="
 
 # Variables
 APP_DIR="/var/www/cv"
-GITHUB_REPO="https://github.com/VOTRE_USERNAME/cv.git"  # À modifier si vous utilisez Git
+GITHUB_REPO="https://github.com/ainaeliasy/CV.git"
 NODE_VERSION="20"
 
 # Couleurs
@@ -135,7 +135,7 @@ const path = require('path');
 const { exec } = require('child_process');
 
 const PORT = process.env.PORT || 3000;
-const DIST_DIR = path.join(__dirname, '..', 'dist');
+const DIST_DIR = path.join(__dirname, '..', 'build');
 const PDF_FILE = 'CV_Eliasy_Rakotomalalaniaina.pdf';
 
 const MIME_TYPES = {
@@ -229,7 +229,7 @@ echo "12. Configuration de Nginx..."
 sudo tee /etc/nginx/sites-available/cv << EOF
 server {
     listen 80;
-    server_name _;
+    server_name goodev.abrdns.com;
 
     location / {
         proxy_pass http://localhost:3000;

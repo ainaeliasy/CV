@@ -11,12 +11,18 @@ interface Language {
 const languages: Language[] = [
   {
     id: '1',
+    name: 'Malgache',
+    level: 'Maternelle',
+    proficiency: 100,
+  },
+  {
+    id: '2',
     name: 'Français',
     level: 'Courant',
     proficiency: 95,
   },
   {
-    id: '2',
+    id: '3',
     name: 'Anglais',
     level: 'Professionnel',
     proficiency: 85,

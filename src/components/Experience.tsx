@@ -3,10 +3,10 @@ import { Briefcase, Calendar, MapPin } from 'lucide-react';
 
 interface ExperienceItem {
   id: string;
-  title: 'Titre du Poste Senior',
-  company: 'Nom de l\'Entreprise',
-  period: 'Jan 2022 - Présent',
-  location: 'Paris, France',
+  title: string;
+  company: string;
+  period: string;
+  location: string;
   description: string[];
 }
 

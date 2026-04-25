@@ -9,8 +9,12 @@ export function PersonalInfo() {
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-indigo-600/20 rounded-full blur-3xl"></div>
       
       <div className="relative flex flex-col md:flex-row items-center md:items-start gap-8">
-        <div className="w-36 h-36 bg-gradient-to-br from-blue-400 to-indigo-400 rounded-full flex items-center justify-center overflow-hidden border-4 border-white/30 shadow-2xl">
-          <span className="text-6xl">👨‍💻</span>
+        <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-white/30 shadow-2xl flex-shrink-0">
+          <img
+            src="/profile-photo.jpg"
+            alt="Emmanuëlson Eliasy Rakotomalalaniaina"
+            className="w-full h-full object-cover"
+          />
         </div>
         
         <div className="flex-1 text-center md:text-left">
@@ -36,7 +40,7 @@ export function PersonalInfo() {
             <a href="https://www.linkedin.com/in/aina-rakotomalala-69070117a" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform bg-white/10 p-3 rounded-lg backdrop-blur-sm">
               <Linkedin className="w-5 h-5" />
             </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform bg-white/10 p-3 rounded-lg backdrop-blur-sm">
+            <a href="https://github.com/ainaeliasy" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform bg-white/10 p-3 rounded-lg backdrop-blur-sm">
               <Github className="w-5 h-5" />
             </a>
           </div>

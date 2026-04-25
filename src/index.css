@@ -1581,6 +1581,26 @@ html {
 }
 
 /* ========================================
+   Global Custom Styles
+   ======================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Profile photo styling */
+.profile-photo {
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* ========================================
    Download PDF Button
    ======================================== */
 
