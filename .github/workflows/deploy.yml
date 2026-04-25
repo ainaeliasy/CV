@@ -2,7 +2,7 @@ name: Deploy CV to GCP
 
 on:
   push:
-    branches: [develop]
+    branches: [master]
 
 jobs:
   deploy:
